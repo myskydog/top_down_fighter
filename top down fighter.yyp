@@ -1,10 +1,7 @@
 {
   "resources": [
-    {"id":{"name":"Obj_Ruffs","path":"objects/Obj_Ruffs/Obj_Ruffs.yy",},"order":1,},
-    {"id":{"name":"p1_down","path":"sprites/p1_down/p1_down.yy",},"order":2,},
     {"id":{"name":"uuid","path":"scripts/uuid/uuid.yy",},"order":3,},
     {"id":{"name":"P1","path":"sprites/P1/P1.yy",},"order":0,},
-    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":15,},
     {"id":{"name":"find_player_by_id","path":"scripts/find_player_by_id/find_player_by_id.yy",},"order":2,},
     {"id":{"name":"Obj_Turtle","path":"objects/Obj_Turtle/Obj_Turtle.yy",},"order":5,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":3,},
