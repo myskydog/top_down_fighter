@@ -18,7 +18,7 @@ player_id = uuid()
 //user login
 var player_opr = {
 	cmd:"login",
-	character: "Turtle",
+	character: "Green",
 	player_id: player_id,
 }
 
@@ -30,6 +30,7 @@ network_send_raw(client,client_buffer,string_length(data),network_send_text);
 
 // initialize data
 players_in_client = [];
+bullets_in_client = [];
 //socket_to_instanceid = ds_map_create()
 player_list = [];
 current_player = noone;
