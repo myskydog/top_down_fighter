@@ -4,7 +4,8 @@
 image_angle = direction
 speed = 5
 
-if(x>room_width or x<0 or y>room_height or y<0)
+//sqrt(sqr(x-init_x)+sqr(y-init_y))
+if(distance_to_point(init_x, init_y)>range)
 {
 	instance_destroy()
 }

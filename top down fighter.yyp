@@ -1,15 +1,20 @@
 {
   "resources": [
-    {"id":{"name":"Obj_player","path":"objects/Obj_player/Obj_player.yy",},"order":1,},
+    {"id":{"name":"Obj_Ruffs","path":"objects/Obj_Ruffs/Obj_Ruffs.yy",},"order":1,},
+    {"id":{"name":"p1_down","path":"sprites/p1_down/p1_down.yy",},"order":2,},
     {"id":{"name":"uuid","path":"scripts/uuid/uuid.yy",},"order":3,},
     {"id":{"name":"P1","path":"sprites/P1/P1.yy",},"order":0,},
+    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":15,},
     {"id":{"name":"find_player_by_id","path":"scripts/find_player_by_id/find_player_by_id.yy",},"order":2,},
+    {"id":{"name":"Obj_Turtle","path":"objects/Obj_Turtle/Obj_Turtle.yy",},"order":5,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":3,},
     {"id":{"name":"Client","path":"objects/Client/Client.yy",},"order":0,},
     {"id":{"name":"send_player_data","path":"scripts/send_player_data/send_player_data.yy",},"order":1,},
-    {"id":{"name":"Obj_enemys","path":"objects/Obj_enemys/Obj_enemys.yy",},"order":2,},
+    {"id":{"name":"Obj_Green","path":"objects/Obj_Green/Obj_Green.yy",},"order":4,},
+    {"id":{"name":"greenGiant","path":"sprites/greenGiant/greenGiant.yy",},"order":3,},
     {"id":{"name":"recieved_packet","path":"scripts/recieved_packet/recieved_packet.yy",},"order":0,},
     {"id":{"name":"bullet","path":"sprites/bullet/bullet.yy",},"order":1,},
+    {"id":{"name":"Turtle","path":"sprites/Turtle/Turtle.yy",},"order":4,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -52,7 +57,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.6.0.23",
+    "IDEVersion": "2022.6.1.26",
   },
   "resourceVersion": "1.5",
   "name": "top down fighter",
