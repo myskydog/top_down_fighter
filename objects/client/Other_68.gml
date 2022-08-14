@@ -39,8 +39,12 @@ switch(type_event)
 					current_player = player;
 				}
 			}
+			
+			player.image_angle = point_direction(player.x,player.y,pd.pos.x,pd.pos.y);
 			player.x=pd.pos.x;
 			player.y=pd.pos.y;
+			
+			
 			
 			if(variable_struct_exists(pd, "bullet"))
 			{
