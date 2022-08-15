@@ -5,7 +5,7 @@ max_ammo = 3
 reload_interval = 0.5 //time_span
 first_shoot = true
 client = network_create_socket(network_socket_ws)
-var result = network_connect_raw(client,"127.0.0.1",8787)
+var result = network_connect_raw(client,"192.168.31.163",8787)
 if(result<0){
 	show_message("Connect server failed. Quit...");
 	game_end()
