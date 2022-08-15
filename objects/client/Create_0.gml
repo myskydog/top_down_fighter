@@ -18,7 +18,7 @@ player_id = uuid()
 //user login
 var player_opr = {
 	cmd:"login",
-	character: "Green",
+	character: "Turtle",
 	player_id: player_id,
 }
 

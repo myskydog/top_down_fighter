@@ -14,34 +14,34 @@ switch(type_event)
 		var bullets = all_data.bullets;
 		//show_debug_message(data);
 		
+		for(var i=0; i<array_length(players_in_client); i++)
+		{
+			array_delete(players_in_client, i,1);
+		}
 		for(var i=0; i<array_length(player_info_list); i++){
 			var pd = player_info_list[i];
-			var player = find_player_by_id(players_in_client ,pd.player_id);
 			var spawn_obj = noone;
-			if(player==noone){ //create new opponent
-				switch(pd.character){
-					case "Ruffs":
-						spawn_obj = Obj_Ruffs;
-						break;
-					case "Green":
-						spawn_obj = Obj_Green;
-						break;
-					case "Turtle":
-						spawn_obj = Obj_Turtle;
-						break;
-					default:
-						spawn_obj = noone; //Obj_Ruffs;
-				}
-				
-				player = instance_create_depth(pd.pos.x,pd.pos.y,depth, spawn_obj);
-				player.player_id = pd.player_id;
-				array_push(players_in_client, player);
-				//show_debug_message("client_id" + Client.player_id);
-				//show_debug_message("player_id" + player.player_id);
-				if(player.player_id==Client.player_id) {
-					current_player = player;
-				}
+			switch(pd.character){
+				case "Ruffs":
+					spawn_obj = Obj_Ruffs;
+					break;
+				case "Green":
+					spawn_obj = Obj_Green;
+					break;
+				case "Turtle":
+					spawn_obj = Obj_Turtle;
+					break;
+				default:
+					spawn_obj = noone; //Obj_Ruffs;
 			}
+			player = instance_create_depth(pd.pos.x,pd.pos.y,depth, spawn_obj);
+			player.player_id = pd.player_id;
+			array_push(players_in_client, player);
+			
+			if(player.player_id==Client.player_id) {
+				current_player = player;
+			}
+			
 			if(player.x!=pd.pos.x or player.y!=pd.pos.y){
 				player.image_angle = point_direction(player.x, player.y, pd.pos.x, pd.pos.y);
 			}
@@ -58,15 +58,7 @@ switch(type_event)
 			bullet.image_angle = point_direction(b.init_pos.x, b.init_pos.y, b.pos.x, b.pos.y);
 			array_push(bullets_in_client, new_bullet);
 		}
-		//delete the player who has left
-		for(var i=0; i<array_length(players_in_client); i++)
-		{
-			var player_render = players_in_client[i];
-			if(find_player_by_id(player_info_list, player_render.player_id)==noone)
-			{
-				array_delete(players_in_client, i,1);
-			}
-		}
+		
 		var srv_cmds = all_data.srv_cmds;
 		for(var i=0; i<array_length(srv_cmds); i++) {
 			var srv_cmd = srv_cmds[i]
