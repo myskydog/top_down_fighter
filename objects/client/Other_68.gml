@@ -67,6 +67,14 @@ switch(type_event)
 				array_delete(players_in_client, i,1);
 			}
 		}
+		var srv_cmds = all_data.srv_cmds;
+		for(var i=0; i<array_length(srv_cmds); i++) {
+			var srv_cmd = srv_cmds[i]
+			if(srv_cmd.name == "died" and srv_cmd.player_id == Client.player_id)
+			{
+				show_message("You Died! º ^ º");
+			}
+		}
 		break;
 }
 
