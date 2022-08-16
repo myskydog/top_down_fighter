@@ -3,6 +3,7 @@ player = find_player_by_id(players_in_client ,Client.player_id);
 if(player==noone){
 	return;
 }
+
 if(!first_shoot && ammo<max_ammo && get_timer()-last_reload_time>=reload_interval * 1000000){
 	last_reload_time = get_timer();
 	ammo++;

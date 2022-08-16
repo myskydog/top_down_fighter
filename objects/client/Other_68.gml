@@ -16,6 +16,7 @@ switch(type_event)
 		
 		for(var i=0; i<array_length(players_in_client); i++)
 		{
+			instance_destroy(players_in_client[i]);
 			array_delete(players_in_client, i,1);
 		}
 		for(var i=0; i<array_length(player_info_list); i++){
@@ -35,6 +36,8 @@ switch(type_event)
 					spawn_obj = noone; //Obj_Ruffs;
 			}
 			player = instance_create_depth(pd.pos.x,pd.pos.y,depth, spawn_obj);
+			player.direction = point_direction(player.x,player.y,mouse_x,mouse_y)
+			player.image_angle = player.direction
 			player.player_id = pd.player_id;
 			array_push(players_in_client, player);
 			
@@ -42,9 +45,9 @@ switch(type_event)
 				current_player = player;
 			}
 			
-			if(player.x!=pd.pos.x or player.y!=pd.pos.y){
-				player.image_angle = point_direction(player.x, player.y, pd.pos.x, pd.pos.y);
-			}
+			//if(player.x!=pd.pos.x or player.y!=pd.pos.y){
+			//	player.image_angle = point_direction(player.x, player.y, pd.pos.x, pd.pos.y);
+			//}
 			player.x=pd.pos.x;
 			player.y=pd.pos.y;
 			player.health = pd.health;
@@ -58,15 +61,17 @@ switch(type_event)
 			bullet.image_angle = point_direction(b.init_pos.x, b.init_pos.y, b.pos.x, b.pos.y);
 			array_push(bullets_in_client, new_bullet);
 		}
-		
-		var srv_cmds = all_data.srv_cmds;
-		for(var i=0; i<array_length(srv_cmds); i++) {
-			var srv_cmd = srv_cmds[i]
-			if(srv_cmd.name == "died" and srv_cmd.player_id == Client.player_id)
-			{
-				show_message("You Died! º ^ º");
+		if(variable_struct_exists(all_data, "srv_cmds")){
+			var srv_cmds = all_data.srv_cmds;
+			for(var i=0; i<array_length(srv_cmds); i++) {
+				var srv_cmd = srv_cmds[i]
+				if(srv_cmd.name == "died" and srv_cmd.player_id == Client.player_id)
+				{
+					show_message("You Died! º ^ º");
+				}
 			}
 		}
+		
 		break;
 }
 
